@@ -45,3 +45,17 @@ logs/
 # Python
 __pycache__/
 *.pyc
+
+# SQLite DB
+db.sqlite3
+
+# Django / Python
+__pycache__/
+*.pyc
+*.log
+*.env
+
+# Dependencies / builds
+venv/
+env/
+node_modules/
