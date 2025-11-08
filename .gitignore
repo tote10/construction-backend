@@ -22,3 +22,26 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Dependencies / builds
+node_modules/
+dist/
+build/
+
+# Environment and secrets
+.env
+*.key
+*.pem
+
+# Logs
+logs/
+*.log
+
+# Python
+__pycache__/
+*.pyc
