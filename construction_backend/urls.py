@@ -10,7 +10,7 @@ router.register(r'projects', ProjectViewSet)
 router.register(r'services', ServiceViewSet)
 router.register(r'jobs', JobViewSet)
 router.register(r'applications', ApplicationViewSet)
-rlpatterns = [
+urlpattern = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]
