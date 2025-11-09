@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'vacancies',
     'projects',
     'rest_framework',
+    'services',
 ]
 
 
