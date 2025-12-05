@@ -15,11 +15,12 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
-class ProjectsUpdate(models.Model):
+class ProjectUpdate(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='updates')
     title = models.CharField(max_length=200)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=2, choices=Project.STATUS_CHOICES, default='IP')
     update_image = models.ImageField(upload_to='project_updates/', null=True, blank=True)
     def __str__(self):
         return f"{self.title} - {self.project.name}"
