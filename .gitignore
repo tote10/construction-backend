@@ -42,6 +42,12 @@ build/
 logs/
 *.log
 
+# Media/uploads
+/media/
+/uploads/
+/staticfiles/
+/*.sqlite3
+
 # Python
 __pycache__/
 *.pyc
