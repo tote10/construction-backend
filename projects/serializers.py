@@ -23,8 +23,15 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = [
-            "id", "name", "description", "cover_image",
-            "start_date", "end_date", "images", "image_files",
+            "id",
+            "name",
+            "description",
+            "status",          # <-- include status from model
+            "cover_image",
+            "start_date",
+            "end_date",
+            "images",
+            "image_files",
         ]
 
     def create(self, validated_data):
