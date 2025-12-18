@@ -1,5 +1,5 @@
 from django.db import models
-class job(models.Model):
+class Job(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     location = models.CharField(max_length=100)
@@ -8,7 +8,7 @@ class job(models.Model):
     def __str__(self):
         return self.title
 class Application(models.Model):
-    job = models.ForeignKey(job, on_delete=models.CASCADE)
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
     applicant_name = models.CharField(max_length=100)
     applicant_email = models.EmailField()
     resume = models.FileField(upload_to='resumes/')
