@@ -7,6 +7,8 @@ class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     parser_classes = (MultiPartParser, FormParser, JSONParser)
+    filterset_fields = ['status']
+    search_fields = ['name', 'description']
 
 class ProjectUpdateViewSet(viewsets.ModelViewSet):
     queryset = ProjectUpdate.objects.all()
