@@ -32,6 +32,21 @@ class ProjectViewSet(viewsets.ModelViewSet):
     filterset_fields = ['status']
     search_fields = ['name', 'description']
 
+@extend_schema(
+    request={
+        'multipart/form-data': {
+            'type': 'object',
+            'properties': {
+                'title': {'type': 'string'},
+                'content': {'type': 'string'},
+                'project': {'type': 'integer'},
+                'status': {'type': 'string', 'enum': ['PL', 'IP', 'CO']},
+                'update_image': {'type': 'string', 'format': 'binary'},
+            },
+            'required': ['title', 'content', 'project']
+        }
+    }
+)
 class ProjectUpdateViewSet(viewsets.ModelViewSet):
     queryset = ProjectUpdate.objects.all()
     serializer_class = ProjectUpdateSerializer
