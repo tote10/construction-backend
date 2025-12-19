@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinLengthValidator
 
 class Project(models.Model):
     STATUS_CHOICES = (
@@ -7,7 +8,7 @@ class Project(models.Model):
         ('CO', 'Completed'),
     )
     name = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(validators=[MinLengthValidator(250)])
     start_date = models.DateField()
     cover_image = models.ImageField(upload_to="projects/covers/", blank=True, null=True)
     end_date = models.DateField(null=True, blank=True)
